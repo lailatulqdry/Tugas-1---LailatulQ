@@ -4,13 +4,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Beranda from './screen/Beranda';
 import Akun from './screen/Akun';
+import Library from './screen/Library';
 
 const Stack = createNativeStackNavigator();
 
 function App ()  {
   return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Akun">
+        <Stack.Navigator initialRouteName="Beranda">
           <Stack.Screen 
             name="Beranda" 
             options={{headerShown: false}}
@@ -19,7 +20,13 @@ function App ()  {
           <Stack.Screen 
           name="Akun" 
           options={{headerShown: false}}
-          component={Akun} />
+          component={Akun} 
+          />
+          <Stack.Screen 
+            name="Library" 
+            options={{headerShown: false}}
+            component={Library} 
+          />
         </Stack.Navigator>
       </NavigationContainer>
   );

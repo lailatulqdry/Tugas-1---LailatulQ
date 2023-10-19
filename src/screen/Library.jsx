@@ -7,15 +7,15 @@ export default class Beranda extends Component {
         return (
             <View style={styles.box}>
                 <Text style={styles.judul}>
-                    <Text style={{color: 'green', fontStyle: 'normal', fontWeight: 'bold'}}>ruang</Text>
-                    Belajar</Text>
+                    <Text style={{color: 'green', fontStyle: 'normal', fontWeight: 'bold'}}>Library</Text>
+                    Buku</Text>
                 <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Akun')}>
-                    <Text>Ke About</Text>
+                onPress={() => this.props.navigation.navigate('Beranda')}>
+                    <Text>Ke Beranda</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Library')}>
-                    <Text>Ke Library</Text>
+                onPress={() => this.props.navigation.navigate('Akun')}>
+                    <Text>Ke Akun</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         fontStyle: 'normal',
-        textAlign: 'right',
+        textAlign: 'center',
         marginTop: 5,
     },
     box: {
+        backgroundColor: 'white',
         padding: 10,
     }
 })
