@@ -5,9 +5,9 @@ import Tombol from '../component/Tombol';
 export default class Akun extends Component {
     render() {
         return (
-            <View style={styles.box}>
+            <View>
                 <Text style={styles.judul}>
-                    <Text style={{color: 'green', fontStyle: 'normal', fontWeight: 'bold'}}>Hello!</Text>
+                    <Text style={{color: 'skyblue', fontStyle: 'normal', fontWeight: 'bold'}}>Hello!</Text>
                     Diyah</Text>
                 <TouchableOpacity 
                 onPress={() => this.props.navigation.navigate('Beranda')}>
@@ -24,15 +24,17 @@ export default class Akun extends Component {
 
 const styles = StyleSheet.create({
     judul: {
-        color: 'black',
+        color: 'dimgray',
         fontSize: 20,
         fontWeight: 'bold',
         fontStyle: 'normal',
-        textAlign: 'right',
+        textAlign: 'left',
         marginTop: 5,
+        backgroundColor: 'mintcream',
+        elevation: 20,
+        paddingBottom: 10,
+        paddingTop: 10,
+        paddingLeft: 5,
+        marginBottom: 10,
     },
-    box: {
-        backgroundColor: 'white',
-        padding: 10,
-    }
 })

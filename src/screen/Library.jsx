@@ -7,7 +7,7 @@ export default class Beranda extends Component {
         return (
             <View style={styles.box}>
                 <Text style={styles.judul}>
-                    <Text style={{color: 'green', fontStyle: 'normal', fontWeight: 'bold'}}>Library</Text>
+                    <Text style={{color: 'skyblue', fontStyle: 'normal', fontWeight: 'bold'}}>Library</Text>
                     Buku</Text>
                 <TouchableOpacity 
                 onPress={() => this.props.navigation.navigate('Beranda')}>
@@ -24,15 +24,17 @@ export default class Beranda extends Component {
 
 const styles = StyleSheet.create({
     judul: {
-        color: 'black',
+        color: 'dimgray',
         fontSize: 20,
         fontWeight: 'bold',
         fontStyle: 'normal',
         textAlign: 'center',
         marginTop: 5,
+        backgroundColor: 'mintcream',
+        elevation: 20,
+        paddingBottom: 10,
+        paddingTop: 10,
+        paddingLeft: 5,
+        marginBottom: 10,
     },
-    box: {
-        backgroundColor: 'white',
-        padding: 10,
-    }
 })

@@ -5,13 +5,13 @@ import Tombol from '../component/Tombol';
 export default class Beranda extends Component {
     render() {
         return (
-            <View style={styles.box}>
+            <View>
                 <Text style={styles.judul}>
-                    <Text style={{color: 'green', fontStyle: 'normal', fontWeight: 'bold'}}>ruang</Text>
+                    <Text style={{color: 'skyblue', fontStyle: 'normal', fontWeight: 'bold'}}>ruang</Text>
                     Belajar</Text>
                 <TouchableOpacity 
                 onPress={() => this.props.navigation.navigate('Akun')}>
-                    <Text>Ke About</Text>
+                    <Text>Ke Akun</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
                 onPress={() => this.props.navigation.navigate('Library')}>
@@ -24,14 +24,17 @@ export default class Beranda extends Component {
 
 const styles = StyleSheet.create({
     judul: {
-        color: 'black',
+        color: 'dimgray',
         fontSize: 20,
         fontWeight: 'bold',
         fontStyle: 'normal',
         textAlign: 'right',
         marginTop: 5,
+        backgroundColor: 'mintcream',
+        elevation: 20,
+        paddingBottom: 10,
+        paddingTop: 10,
+        paddingRight: 5,
+        marginBottom: 10,
     },
-    box: {
-        padding: 10,
-    }
 })
