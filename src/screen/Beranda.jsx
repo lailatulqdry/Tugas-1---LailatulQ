@@ -1,36 +1,51 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, Text, Alert, TouchableOpacity, } from 'react-native'
-import Tombol from '../component/Tombol';
+import Input from '../component/Input';
+
 
 export default class Beranda extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            beranda: 'hello'
+        };
+    }
     render() {
-        return (
-            <View>
-                <Text style={styles.judul}>
-                    <Text style={{color: 'skyblue', fontStyle: 'normal', fontWeight: 'bold'}}>ruang</Text>
-                    Belajar</Text>
-                <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Akun')}>
-                    <Text>Ke Akun</Text>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Library')}>
-                    <Text>Ke Library</Text>
-                </TouchableOpacity>
+        return(
+            <View style={styles.box}> 
+              <Text style={{color: 'skyblue', 
+              fontStyle: 'normal', 
+              fontWeight: 'bold', 
+              marginLeft: 10,
+              marginTop: 10,
+              fontSize:20,
+              }}>
+                {this.state.beranda}
+              <Text style={{color: 'black', 
+              fontStyle: 'normal', 
+              fontWeight: 'bold', 
+              marginLeft: 10,
+              marginTop: 10,
+              fontSize:25,
+              }}>diyah!</Text>
+                </Text>
+              <Input placeholder={'Ketik Judul Buku'} typeKeyboard={'email'}/>
             </View>
-        )
-    };
+          );
+    }
 }
+
 
 const styles = StyleSheet.create({
     judul: {
-        color: 'dimgray',
+        color: 'black',
         fontSize: 20,
         fontWeight: 'bold',
         fontStyle: 'normal',
-        textAlign: 'right',
+        textAlign: 'left',
         marginTop: 5,
-        backgroundColor: 'mintcream',
+        marginLeft: 10,
         elevation: 20,
         paddingBottom: 10,
         paddingTop: 10,

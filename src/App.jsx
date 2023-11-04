@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert, Image } from 'react-native';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -7,6 +7,7 @@ import Beranda from './screen/Beranda';
 import Akun from './screen/Akun';
 import Library from './screen/Library';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -14,9 +15,25 @@ const Tab = createBottomTabNavigator();
 const Tabs = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Beranda" component={Beranda} />
-      <Tab.Screen name="Library" component={Library} />
-      <Tab.Screen name="Akun" component={Akun} />
+      <Tab.Screen 
+      name="Beranda"
+      options={{
+        headerShown: false, tabBarIcon: ({color, size}) => (<MaterialCommunityIcons name="home" color={color} size={size} />
+        ),
+      }}
+      component={Beranda} />
+      <Tab.Screen name="Library" 
+      options={{
+        headerShown: false, tabBarIcon: ({color, size}) => (<MaterialCommunityIcons name="library" color={color} size={size} />
+        ),
+      }}
+      component={Library} />
+      <Tab.Screen name="Akun" 
+      options={{
+        headerShown: false, tabBarIcon: ({color, size}) => (<MaterialCommunityIcons name="account" color={color} size={size} />
+        ),
+      }}
+      component={Akun} />
     </Tab.Navigator>
   );
 };
@@ -28,10 +45,7 @@ function App ()  {
           <Stack.Screen 
             name="Main" 
             options={{
-              headerShown: false, 
-              tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="home" color={color} size={size} ></MaterialCommunityIcons>
-              ),
+              headerShown: false,
             }}
             component={Tabs} 
           />

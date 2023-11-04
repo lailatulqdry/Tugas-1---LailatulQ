@@ -9,14 +9,6 @@ export default class Beranda extends Component {
                 <Text style={styles.judul}>
                     <Text style={{color: 'skyblue', fontStyle: 'normal', fontWeight: 'bold'}}>Library</Text>
                     Buku</Text>
-                <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Beranda')}>
-                    <Text>Ke Beranda</Text>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Akun')}>
-                    <Text>Ke Akun</Text>
-                </TouchableOpacity>
             </View>
         )
     };
