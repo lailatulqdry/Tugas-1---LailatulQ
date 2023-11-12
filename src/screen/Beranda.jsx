@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, Text, Alert, TouchableOpacity, } from 'react-native'
+import { StyleSheet, View, Text, } from 'react-native'
 import Input from '../component/Input';
-
 
 export default class Beranda extends Component {
     constructor(props) {
@@ -11,31 +10,32 @@ export default class Beranda extends Component {
             beranda: 'hello'
         };
     }
-    render() {
-        return(
-            <View style={styles.box}> 
-              <Text style={{color: 'skyblue', 
-              fontStyle: 'normal', 
-              fontWeight: 'bold', 
-              marginLeft: 10,
-              marginTop: 10,
-              fontSize:20,
-              }}>
-                {this.state.beranda}
-              <Text style={{color: 'black', 
-              fontStyle: 'normal', 
-              fontWeight: 'bold', 
-              marginLeft: 10,
-              marginTop: 10,
-              fontSize:25,
-              }}>diyah!</Text>
-                </Text>
-              <Input placeholder={'Ketik Judul Buku'} typeKeyboard={'email'}/>
-            </View>
-          );
-    }
-}
 
+    render() {
+      return (
+            <View style={styles.box}> 
+                <Text style={{color: 'skyblue', 
+                    fontStyle: 'normal', 
+                    fontWeight: 'bold', 
+                    marginLeft: 10,
+                    marginTop: 10,
+                    fontSize:20,
+                    }}>
+                  {this.state.beranda}
+                  <Text style={{color: 'black', 
+                      fontStyle: 'normal', 
+                      fontWeight: 'bold', 
+                      marginLeft: 10,
+                      marginTop: 10,
+                      fontSize:25,
+                      }}>diyah!
+                  </Text>
+                </Text>
+                <Input placeholder={'Ketik Judul Buku'} typeKeyboard={'email'}/>
+            </View>
+      );
+    };
+};
 
 const styles = StyleSheet.create({
     judul: {

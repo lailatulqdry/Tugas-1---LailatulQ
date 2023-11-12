@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Alert, Image } from 'react-native';
+import { View, Text} from 'react-native';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -6,11 +6,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Beranda from './screen/Beranda';
 import Akun from './screen/Akun';
 import Library from './screen/Library';
-import Tombol from './component/Tombol';
-import Card from './component/Card';
+import Profile from './screen/Profile';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Screen } from 'react-native-screens';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -64,10 +62,15 @@ function App ()  {
             options={{headerShown: false}}
             component={Library} 
           />
+          <Stack.Screen
+            name='Profile'
+            component={Profile}
+          />
         </Stack.Navigator>
-      </NavigationContainer>
+      </NavigationContainer> 
   );
 }; 
+
 
 export default App;
 
