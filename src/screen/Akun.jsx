@@ -10,26 +10,27 @@ export default class Akun extends Component {
     render() {
         return (
             <View style={{flex: 1}}>
-                <View style={{flex: 0.3, backgroundColor: 'darkseagreen'}}></View>
+                <View style={{flex: 0.3, backgroundColor: 'dodgerblue'}}></View>
                 <View style={{flex: 1, backgroundColor: 'white'}}>
                     <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                            <Image
-                                    source={require('/Users/Diyah/belajarkuy/Tugas/src/images/profil.jpg')}
-                                style={{
-                                    width: 100, 
-                                    height: 100, 
-                                    borderRadius: 100 / 2, 
-                                    borderWidth: 3, 
-                                    borderColor: 'lightgray',
-                                    position: 'absolute',}}/>
-                        </View>
+                        <Image
+                            source={require('/Users/Diyah/belajarkuy/Tugas/src/images/profil.jpg')}
+                            style={{
+                                width: 100, 
+                                height: 100, 
+                                borderRadius: 100 / 2, 
+                                borderWidth: 3, 
+                                borderColor: 'lightgray',
+                                position: 'absolute',}}/>
+                    </View>
                         <View style={{marginTop: 50}}>
                             <Text style={{
                                 color: 'black',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 marginTop: 5,
-                            }}>Lailatul Qodriyah</Text>
+                                }}>Lailatul Qodriyah
+                            </Text>
                         </View>
                             <Text style={{
                                 color: 'gray',
@@ -49,16 +50,19 @@ export default class Akun extends Component {
                                     }}>My Profile
                                 </Text>
                             </TouchableOpacity>
+                            <View style={{alignItems: 'flex-end', flex: 1}}>
                                 <Image
                                     source={require('/Users/Diyah/belajarkuy/Tugas/src/images/right-chevron.png')}
                                     style={{
                                         width: 20, 
                                         height: 20,
                                         marginTop: 15,
-                                        marginLeft: 10,}}
+                                        marginRight: 20,}}
                                 />
+                            </View>
                         </View>
                         <View style={{flexDirection: 'row'}}>
+                            <TouchableOpacity>
                                 <Text style={{
                                     marginLeft: 10,
                                     marginRight: 10,
@@ -66,16 +70,41 @@ export default class Akun extends Component {
                                     color : 'black',
                                     }}>Bantuan
                                 </Text>
+                            </TouchableOpacity>
+                            <View style={{alignItems: 'flex-end', flex: 1}}>
                                 <Image
                                     source={require('/Users/Diyah/belajarkuy/Tugas/src/images/right-chevron.png')}
                                     style={{
                                         width: 20, 
                                         height: 20,
                                         marginTop: 15,
-                                        marginLeft: 10,}}
+                                        marginRight: 20,}}
                                 />
+                            </View>
                         </View>
                         <View style={{flexDirection: 'row'}}>
+                            <TouchableOpacity>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    marginRight: 10,
+                                    marginTop :15,
+                                    color : 'black',
+                                    }}>Pengaturan
+                                </Text>
+                            </TouchableOpacity>
+                            <View style={{alignItems: 'flex-end', flex: 1}}>
+                                <Image
+                                    source={require('/Users/Diyah/belajarkuy/Tugas/src/images/right-chevron.png')}
+                                    style={{
+                                        width: 20, 
+                                        height: 20,
+                                        marginTop: 15,
+                                        marginRight: 20,}}
+                                />
+                            </View>
+                        </View>
+                        <View style={{flexDirection: 'row'}}>
+                            <TouchableOpacity>
                                 <Text style={{
                                     marginLeft: 10,
                                     marginRight: 10,
@@ -83,26 +112,32 @@ export default class Akun extends Component {
                                     color : 'black',
                                     }}>Contact Us
                                 </Text>
+                            </TouchableOpacity>
+                            <View style={{alignItems: 'flex-end', flex: 1}}>
                                 <Image
                                     source={require('/Users/Diyah/belajarkuy/Tugas/src/images/right-chevron.png')}
                                     style={{
                                         width: 20, 
                                         height: 20,
                                         marginTop: 15,
-                                        marginLeft: 10,}}
+                                        marginRight: 20,}}
                                 />
+                            </View>
                         </View>
+                        <TouchableOpacity>
                         <Text style={{
-                            backgroundColor: 'darkseagreen',
+                            backgroundColor: 'dodgerblue',
                             margin: 50,
                             textAlign: 'center',
                             borderRadius: 50,
                             padding: 10,
                             fontSize: 14,
                             fontWeight: 'bold',
+                            color: 'white',
                             }}>
                             Sign Out
                         </Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
         )

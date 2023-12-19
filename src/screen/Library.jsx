@@ -25,12 +25,49 @@ const App = () => {
     });
 
     const [dataRekomendasi, setDataRekomendasi] = useState([
-      {namaBuku: 'Kisah Sang Kancil'},
-      {namaBuku: 'Ayo, Belajar Membaca'},
+      {namaBuku: 'Kisah Sang Kancil', deskripsi: 'Ceita Anak',
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/dongeng.jpg')
+      },
+      {namaBuku: 'Ayo, Membaca', deskripsi: 'Pelajaran',
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/Ayo.jpg')
+      },
+      {namaBuku: 'REGANTARA', deskripsi: 'Novel',
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/regantara.jpg')
+      },
+      {namaBuku: 'Menjadi Putri Raja', deskripsi: 'Komik',
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/putri.jpg')
+      },
+      {namaBuku: 'Ayo, Menghitung', deskripsi: 'Pelajaran',
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/menghitung.jpg')
+      },
     ])
 
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: 'white'}}>
+        <View style={{flexDirection: 'row'}}>
+            <Text style={{
+              marginLeft: 10,
+              marginTop: 20,
+              fontSize: 15,
+              fontWeight: 'bold',
+              color: 'black',
+              }}>
+              Pilihan Terbaik Untukmu
+            </Text>
+            <View style={{alignItems: 'flex-end', flex: 1}}>
+              <TouchableOpacity>
+                <Image
+                  source={require('/Users/Diyah/belajarkuy/Tugas/src/images/right-chevron.png')}
+                  style={{
+                    width: 20, 
+                    height: 20,
+                    marginTop: 20,
+                    marginRight: 20,
+                  }}
+                />
+              </TouchableOpacity>
+              </View>
+          </View>
           <View>
             <FlatList
               data={kategori}
@@ -48,6 +85,8 @@ const App = () => {
                           paddingHorizontal: 10,
                           paddingVertical: 6,
                           borderRadius: 15,
+                          borderColor: 'gray',
+                          borderWidth: 0.5,
                           }}>
                       <Text
                         style={{
@@ -58,28 +97,6 @@ const App = () => {
                   </TouchableOpacity>
               )}
             />
-          </View>
-        <View style={{flexDirection: 'row'}}>
-            <Text style={{
-              marginLeft: 10,
-              marginTop: 20,
-              fontSize: 15,
-              fontWeight: 'bold',
-              color: 'black',
-              }}>
-              Paling Populer
-            </Text>
-            <View style={{alignItems: 'flex-end', flex: 1}}>
-              <TouchableOpacity>
-                <Text style={{
-                  marginTop: 25,
-                  marginRight: 10,
-                  fontSize: 12,
-                  }}>
-                  Lihat Semua
-                </Text>
-              </TouchableOpacity>
-              </View>
           </View>
         <View style={{flex: 1}}>
             <FlatList
@@ -96,12 +113,28 @@ const App = () => {
                           backgroundColor: 'white',
                           paddingHorizontal: 10,
                           paddingVertical: 6,
+                          borderRadius: 10,
+                          borderColor: 'gray',
+                          borderWidth: 1,
                           }}>
+                      <Image
+                        source={item.image}
+                        style={{width: 100, height:100}}
+                        resizeMode={'cover'}
+                      />
                       <Text
                         style={{
                           color: 'black',
                         }}
-                        >{item.namaBuku}</Text>
+                        >{item.namaBuku}
+                      </Text>
+                      <Text
+                        style={{
+                          color: 'gray',
+                          fontSize: 12,
+                        }}
+                        >{item.deskripsi}
+                      </Text>
                       </View>
                   </TouchableOpacity>
               )}

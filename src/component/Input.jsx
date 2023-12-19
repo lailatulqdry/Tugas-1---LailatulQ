@@ -21,9 +21,11 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 5,
         backgroundColor: 'white',
-        borderColor: 'gray',
+        borderColor: 'white',
         marginTop: 7,
         marginLeft: 7,
         marginRight: 7,
+        height: 40,
+        width: 300,
     }
 })
