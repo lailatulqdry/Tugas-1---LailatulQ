@@ -1,4 +1,4 @@
-import { View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -7,6 +7,7 @@ import Beranda from './screen/Beranda';
 import Akun from './screen/Akun';
 import Library from './screen/Library';
 import Profile from './screen/Profile';
+import MyProfile from './screen/MyProfile';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
@@ -16,60 +17,66 @@ const Tab = createBottomTabNavigator();
 const Tabs = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen 
-      name="Beranda"
-      options={{
-        headerShown: false, tabBarIcon: ({color, size}) => (<MaterialCommunityIcons name="home" color={color} size={size} />
-        ),
-      }}
-      component={Beranda} />
-      <Tab.Screen name="Library" 
-      options={{
-        headerShown: false, tabBarIcon: ({color, size}) => (<MaterialCommunityIcons name="library" color={color} size={size} />
-        ),
-      }}
-      component={Library} />
-      <Tab.Screen name="Akun" 
-      options={{
-        headerShown: false, tabBarIcon: ({color, size}) => (<MaterialCommunityIcons name="account" color={color} size={size} />
-        ),
-      }}
-      component={Akun} />
+      <Tab.Screen
+        name="Beranda"
+        options={{
+          headerShown: false, tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
+        }}
+        component={Beranda} />
+      <Tab.Screen name="Library"
+        options={{
+          headerShown: false, tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="library" color={color} size={size} />
+          ),
+        }}
+        component={Library} />
+      <Tab.Screen name="Akun"
+        options={{
+          headerShown: false, tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+        }}
+        component={Akun} />
     </Tab.Navigator>
   );
 };
 
-function App ()  {
+function App() {
   return (
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Beranda">
-          <Stack.Screen 
-            name="Main" 
-            options={{
-              headerShown: false,
-            }}
-            component={Tabs} 
-          />
-          <Stack.Screen 
-          name="Akun" 
-          options={{headerShown: false, 
-            tabBarIcon: ({ color, size }) => 
-            <MaterialCommunityIcons name="account" color={color} size={size} />}}
-          component={Akun} 
-          />
-          <Stack.Screen 
-            name="Library" 
-            options={{headerShown: false}}
-            component={Library} 
-          />
-          <Stack.Screen
-            name='Profile'
-            component={Profile}
-          />
-        </Stack.Navigator>
-      </NavigationContainer> 
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Beranda">
+        <Stack.Screen
+          name="Main"
+          options={{
+            headerShown: false,
+          }}
+          component={Tabs}
+        />
+        <Stack.Screen
+          name="Akun"
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) =>
+              <MaterialCommunityIcons name="account" color={color} size={size} />
+          }}
+          component={Akun}
+        />
+        <Stack.Screen
+          name="Library"
+          options={{ headerShown: false }}
+          component={Library}
+        />
+        <Stack.Screen
+          name='Profile'
+          component={Profile}
+        />
+        <Stack.Screen
+          name='MyProfile'
+          component={MyProfile}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}; 
+};
 
 
 export default App;
