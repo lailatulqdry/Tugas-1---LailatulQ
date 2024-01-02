@@ -1,43 +1,16 @@
 import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default class MyProfile extends Component {
-  render() {
+const App = ({route}) => {
+
     return (
       <View>
-        <Text style={{
-          marginTop: 30,
-          marginLeft: 15,
-          color: 'black',
-          fontWeight: 'bold',
-          fontSize: 15,
-        }}
-        >Username : </Text>
-        <Text style={{
-          marginTop: 20,
-          marginLeft: 15,
-          color: 'black',
-          fontWeight: 'bold',
-          fontSize: 15,
-        }}
-        >Jenis Kelamin : </Text>
-        <Text style={{
-          marginTop: 20,
-          marginLeft: 15,
-          color: 'black',
-          fontWeight: 'bold',
-          fontSize: 15,
-        }}
-        >E-mail : </Text>
-        <Text style={{
-          marginTop: 20,
-          marginLeft: 15,
-          color: 'black',
-          fontWeight: 'bold',
-          fontSize: 15,
-        }}
-        >No.HP : </Text>
+        <Text>Username : {route.params.Username}</Text>
+        <Text>Jenis Kelamin : {route.params.JK}</Text>
+        <Text>E-mail : {route.params.Email}</Text>
+        <Text>no.HP : {route.params.noHP}</Text>
       </View>
     )
-  }
-}
+};
+
+export default App;

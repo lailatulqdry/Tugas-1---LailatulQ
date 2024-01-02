@@ -11,9 +11,9 @@ export default class Akun extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <ScrollView>
-                    <View style={{ flex: 0.3, backgroundColor: 'dodgerblue' }}>
+                    <View style={{ flex: 0.3}}>
                         <Image
-                            source={require('/Users/Diyah/belajarkuy/Tugas/src/images/windbg.png')}
+                            source={require('/Users/Diyah/belajarkuy/Tugas/src/images/background.png')}
                             style={{
                                 width: 310,
                                 height: 150,
@@ -44,16 +44,6 @@ export default class Akun extends Component {
                             }}>Lailatul Qodriyah
                             </Text>
                         </View>
-                        <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate('MyProfile')}>
-                            <Text style={{
-                                color: 'gray',
-                                fontWeight: '300',
-                                textAlign: 'center',
-                                fontStyle: 'italic',
-                            }}>My Profile
-                            </Text>
-                        </TouchableOpacity>
                         <Text style={{
                             marginTop: 15,
                             marginLeft: 10,
@@ -62,7 +52,7 @@ export default class Akun extends Component {
                         }}>Buku Saya</Text>
                         <View style={{ backgroundColor: 'lightgray', margin: 10, borderRadius: 8, }}>
                             <View style={{ flexDirection: 'row' }}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                                <TouchableOpacity>
                                     <Image
                                         source={require('/Users/Diyah/belajarkuy/Tugas/src/images/user.png')}
                                         style={{
@@ -73,8 +63,7 @@ export default class Akun extends Component {
                                         }}
                                     />
                                 </TouchableOpacity>
-                                <TouchableOpacity
-                                    onPress={() => this.props.navigation.navigate('Profile')}>
+                                <TouchableOpacity>
                                     <Text style={{
                                         marginLeft: 10,
                                         marginRight: 10,
@@ -84,7 +73,7 @@ export default class Akun extends Component {
                                     </Text>
                                 </TouchableOpacity>
                                 <View style={{ alignItems: 'flex-end', flex: 1 }}>
-                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                                    <TouchableOpacity>
                                         <Image
                                             source={require('/Users/Diyah/belajarkuy/Tugas/src/images/right-chevron.png')}
                                             style={{

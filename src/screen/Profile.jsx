@@ -1,22 +1,12 @@
 import { Text, View, Image, TouchableOpacity, TextInput, StyleSheet, ScrollView } from 'react-native'
 import React, { Component, useEffect, useState } from 'react'
 
-const App = () => {
+const App = ({navigation}) => {
   const [Username, setUsername] = useState("");
   const [JK, setJK] = useState("");
   const [Email, setEmail] = useState("");
   const [noHP, setnoHP] = useState("");
 
-  const handleSave = () => {
-    const params = {
-      Username,
-      JK,
-      Email,
-      noHP,
-    }
-
-    console.log("Params : ", params);
-  }
 
   return (
     <View>
@@ -79,10 +69,15 @@ const App = () => {
           }}>No.HP :
           </Text>
           <TextInput value={noHP} style={styles.input}
-            placeholder='Masukkan Password'
+            placeholder='Masukkan Nomor Handphone'
             onChangeText={(value) => setnoHP(value)}
             inputMode='numeric' />
-          <TouchableOpacity onPress={() => handleSave()}>
+          <TouchableOpacity onPress={() => navigation.navigate('MyProfile', {
+            Username,
+            JK,
+            Email,
+            noHP,
+          })}>
             <Text style={{
               marginLeft: 18,
               marginRight: 18,
@@ -93,7 +88,7 @@ const App = () => {
               backgroundColor: 'dodgerblue',
               paddingVertical: 10,
               textAlign: 'center'
-            }}>Save
+            }}>Tampilkan
             </Text>
           </TouchableOpacity>
         </View>

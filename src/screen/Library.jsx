@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList, Image, ScrollView } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Image, ScrollView } from 'react-native';
 
-const App = () => {
+const App = ({ navigation }) => {
   const [kategori, setKategori] = useState([
     {
       nama: 'Rekomendasi',
@@ -27,30 +27,31 @@ const App = () => {
   const [dataRekomendasi, setDataRekomendasi] = useState([
     {
       namaBuku: 'Kisah Sang Kancil', deskripsi: 'Cerita Anak',
-      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/dongeng.jpg')
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/1.jpg')
     },
     {
       namaBuku: 'Ayo, Membaca', deskripsi: 'Pengetahuan',
-      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/Ayo.jpg')
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/2.jpg')
     },
     {
       namaBuku: 'REGANTARA', deskripsi: 'Novel',
-      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/regantara.jpg')
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/9.jpg')
     },
     {
       namaBuku: 'Menjadi Putri Raja', deskripsi: 'Komik',
-      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/putri.jpg')
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/8.jpg')
     },
     {
       namaBuku: 'Ayo, Menghitung', deskripsi: 'Pengetahuan',
-      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/menghitung.jpg')
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/6.jpg')
     },
   ]);
 
   const [dataGenre, setDataGenre] = useState([
     {
       namaGenre: 'Cerita Anak',
-      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/anak-anak.jpg')
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/anak-anak.jpg',
+      )
     },
     {
       namaGenre: 'Pengetahuan',
@@ -64,7 +65,26 @@ const App = () => {
       namaGenre: 'Komik',
       image: require('/Users/Diyah/belajarkuy/Tugas/src/images/komik.jpg')
     },
-  ])
+  ]);
+
+  const [dataLanjut, setDataLanjut] = useState([
+    {
+      namaLanjut: 'LAUT',
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/10.jpeg')
+    },
+    {
+      namaLanjut: 'Petualangan Sherina',
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/7.jpeg')
+    },
+    {
+      namaLanjut: 'Komik Anak Muslim',
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/12.jpeg')
+    },
+    {
+      namaLanjut: 'Menjadi Putri Raja',
+      image: require('/Users/Diyah/belajarkuy/Tugas/src/images/8.jpg')
+    },
+  ]);
 
   return (
     <View style={{ flex: 1, backgroundColor: 'white', }}>
@@ -80,7 +100,8 @@ const App = () => {
             Pilihan Terbaik Untukmu
           </Text>
           <View style={{ alignItems: 'flex-end', flex: 1 }}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Pilihan')}>
               <Image
                 source={require('/Users/Diyah/belajarkuy/Tugas/src/images/right-chevron.png')}
                 style={{
@@ -129,7 +150,8 @@ const App = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => (
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Cerita')}>
                 <View style={{
                   marginRight: 10,
                   marginLeft: 10,
@@ -139,12 +161,10 @@ const App = () => {
                   paddingHorizontal: 10,
                   paddingVertical: 6,
                   borderRadius: 10,
-                  borderColor: 'gray',
-                  borderWidth: 1,
                 }}>
                   <Image
                     source={item.image}
-                    style={{ width: 100, height: 100 }}
+                    style={{ width: 80, height: 110, }}
                     resizeMode={'cover'}
                   />
                   <Text
@@ -187,8 +207,8 @@ const App = () => {
                   paddingHorizontal: 10,
                   paddingVertical: 6,
                   borderRadius: 10,
-                  borderColor: 'gray',
-                  borderWidth: 1,
+                  borderColor: 'lightskyblue',
+                  borderWidth: 3,
                 }}>
                   <Image
                     source={item.image}
@@ -200,6 +220,45 @@ const App = () => {
                       color: 'black',
                     }}
                   >{item.namaGenre}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            )}
+          />
+        </View>
+        <View>
+          <Text style={{
+            marginLeft: 10,
+            marginTop: 20,
+            fontSize: 13,
+            fontWeight: 'bold',
+            color: 'black',
+          }}>
+            Lanjutkan Membaca
+          </Text>
+          <FlatList
+            data={dataLanjut}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => (
+              <TouchableOpacity>
+                <View style={{
+                  margin: 10,
+                  backgroundColor: 'white',
+                  paddingHorizontal: 10,
+                  paddingVertical: 6,
+                  borderRadius: 10,
+                }}>
+                  <Image
+                    source={item.image}
+                    style={{ width: 80, height: 110 }}
+                    resizeMode={'cover'}
+                  />
+                  <Text
+                    style={{
+                      color: 'black',
+                    }}
+                  >{item.namaLanjut}
                   </Text>
                 </View>
               </TouchableOpacity>
